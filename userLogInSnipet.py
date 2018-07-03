@@ -1,10 +1,16 @@
 #My first Python Program#
 
-#Checks user name and proceeds with an action#
+#Takes user input and checks conditions and then proceeds#
 
-name = 'mary'
+userName = 'Kabir'
+userPassword = '1@K.P'
 
-if name == 'Mary' || 'mary'
-  print('Hello Mary')
+print ('Input user name ')
+uName = input('')
+print ('Input user password ')
+uPassword = input()
+
+if (uName == userName and uPassword == userPassword):
+    print('Now you can proceed ')
 else:
-  print('who are you?')
+   print('Who the hell are you?')
