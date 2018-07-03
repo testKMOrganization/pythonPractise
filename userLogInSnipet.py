@@ -1,18 +1,18 @@
 #My first Python Program#
 
-#Takes user input and checks conditions and then proceeds#
-#Does the similar actions such as the previous commit but using functions#
+#Third version#
+# Checks the credentials and if wrong tells the user which input was wrong and asks for new input#
 
-#User name and user password now declared as global#
+
 userName = 'Kabir'
 userPassword = '1@K.P'
-
 
 
 def userNameInput():
     print ('Input user name ')
     uName = input('')
     return uName
+
 def userPassInput():
     print ('Input user password ')
     uPassword = input()
@@ -21,8 +21,22 @@ def userPassInput():
 def checkCredentials(uName, uPassword):
     if (uName == userName and uPassword == userPassword):
         print('Now you can proceed ')
+        
+    elif (uName == userName and uPassword != userPassword):
+        print('You have given a wrong password ')
+        uPassword = userPassInput()
+        checkCredentials(uName, uPassword)
+    elif (uName != userName and uPassword == userPassword):
+        print('You have given wrong user name ')
+        uName = userNameInput()
+        checkCredentials(uName, uPassword)
+    elif (uName != userName and uPassword != userPassword):
+        print('Both your user name and password is incorrect ')
+        uName = userNameInput()
+        uPassword = userPassInput()
+        checkCredentials(uName, uPassword)
     else:
-        print('Who the hell are you?')
+        print('What'+'s'+' going on?')
 
 
 uName = userNameInput()
